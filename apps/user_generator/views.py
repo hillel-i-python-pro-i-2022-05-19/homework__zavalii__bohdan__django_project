@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 
-from user_generator.services import generator_of_users
+from apps.user_generator.services import generator_of_users
 
 
 def generate_users_view(request, users_count: int = 100) -> HttpResponse:

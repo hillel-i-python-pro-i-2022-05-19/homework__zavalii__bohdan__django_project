@@ -1,6 +1,6 @@
 from typing import Iterator
 
-from user_generator.utils import User, generate_users
+from apps.user_generator.utils import User, generate_users
 
 
 def generator_of_users(amount_of_users: int) -> Iterator[User]:
