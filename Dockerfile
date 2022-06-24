@@ -26,7 +26,6 @@ COPY --chmod=755 ./docker/app/start.sh /start.sh
 COPY ./Makefile Makefile
 
 COPY ./manage.py manage.py
-COPY ./settings.py settings.py
 COPY ./core ./core/
 COPY ./apps ./apps/
 
@@ -36,4 +35,4 @@ USER ${USER}
 ENTRYPOINT ["/entrypoint.sh"]
 
 VOLUME ${WORKDIR}/db
-EXPOSE 8010
+EXPOSE 8011
