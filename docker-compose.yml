@@ -7,5 +7,5 @@ services:
     volumes:
       - "./db:/wd/db:rw"
     ports:
-      - "8010:8010"
+      - "8011:8011"
     command: '/start.sh'
