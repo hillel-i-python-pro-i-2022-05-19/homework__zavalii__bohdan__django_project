@@ -9,5 +9,8 @@ def generate_users_view(request: HttpRequest,
     output_response = generator_of_users(amount_of_users=users_count)
     return render(
         request, 'user_generator/show_users.html',
-        {"output_response": output_response}
+        {
+            "output_response": output_response,
+            "users_count": users_count
+        }
     )

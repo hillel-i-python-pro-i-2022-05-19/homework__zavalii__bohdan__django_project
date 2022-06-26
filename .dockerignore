@@ -6,6 +6,7 @@
 !manage.py
 !settings.py
 !core
+!static/img
 !apps
 !docker/app
 !Makefile
