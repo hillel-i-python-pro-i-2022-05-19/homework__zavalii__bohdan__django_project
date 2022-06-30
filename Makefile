@@ -1,7 +1,8 @@
 .PHONY: d-homework-i-run
 # Make all actions needed for run homework from zero.
 d-homework-i-run:
-	@make init-configs-i-dev && \
+	@make init-configs-i-dev &&
+	make init-dev-create-superuser &&\
 	make d-run
 
 .PHONY: d-homework-i-purge
@@ -55,3 +56,9 @@ migrations:
 # Make some initialization steps. For example, copy configs.
 init-configs-i-dev:
 	@cp docker-compose.override.dev.yml docker-compose.override.yml
+
+
+.PHONY: init-dev-create-superuser
+# Create superuser/admin to work with admin panel
+init-dev-create-superuser:
+	@DJANGO_SUPERUSER_PASSWORD=admin123 python manage.py createsuperuser --user admin --email admin@gmail.com --no-input
