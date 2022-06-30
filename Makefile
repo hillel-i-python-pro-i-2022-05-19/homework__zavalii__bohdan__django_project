@@ -1,9 +1,7 @@
 .PHONY: d-homework-i-run
 # Make all actions needed for run homework from zero.
 d-homework-i-run:
-	@make init-configs-i-dev &&
-	make init-dev-create-superuser &&\
-	make d-run
+	@make init-configs-i-dev && make d-run
 
 .PHONY: d-homework-i-purge
 # Make all actions needed for purge homework related data.
