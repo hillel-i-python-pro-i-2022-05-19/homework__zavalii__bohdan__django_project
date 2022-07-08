@@ -76,6 +76,7 @@ class Contact(models.Model):
     birthday_date = models.DateField(
         'Date of birth',
         help_text='Please enter data in the following format %Y-%m-%d',
+        default='2022-07-07',
         blank=True
     )
 
