@@ -1,6 +1,7 @@
 import datetime
 
 from django.db import models
+from django.urls import reverse_lazy
 
 from apps.contacts.utils import phone_regex
 
@@ -88,6 +89,9 @@ class Contact(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse_lazy('contacts:edit', kwargs={'pk': self.pk})
 
     def __str__(self) -> str:
         return f"{self.contact_name} - (+{self.phone_value})"
