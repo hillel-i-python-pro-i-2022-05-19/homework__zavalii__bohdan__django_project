@@ -88,3 +88,8 @@ util-i-kill-by-port:
 # Create three contacts to the database
 d-create-contacts-i-3:
 	@python manage.py create_contacts 3
+
+.PHONY: d-generate-password-i-64
+# Generates random 64 length string
+d-generate-password-i-64:
+	@python manage.py generate_password 64
