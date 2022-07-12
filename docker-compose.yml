@@ -9,7 +9,7 @@ services:
     ports:
       - "8011:8011"
     env_file:
-      - .env.example
+      - .env
     depends_on:
       - postgres
     profiles:
