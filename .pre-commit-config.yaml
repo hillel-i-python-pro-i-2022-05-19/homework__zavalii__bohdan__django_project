@@ -17,15 +17,6 @@ repos:
         # https://pre-commit.com/#top_level-default_language_version
         language_version: python3.10
 
-  #    -   repo: local
-  #        hooks:
-  #            -   id: prospector
-  #                name: prospector
-  #                entry: prospector
-  #                language: system
-  #                types:
-  #                    - python
-
   - repo: https://github.com/PyCQA/prospector
     rev: 1.7.7 # The version of Prospector to use, if not 'master' for latest
     hooks:
