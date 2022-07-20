@@ -34,6 +34,11 @@ Make some initialization steps. For example, copy configs.
 make init-configs-i-dev
 ```
 
+Updates pip and requirements, creates git-hub web-hooks
+
+```shell
+make init-dev
+```
 ---
 
 ## 🐳 Docker
