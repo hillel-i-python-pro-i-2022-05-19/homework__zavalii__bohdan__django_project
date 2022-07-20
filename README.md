@@ -1,6 +1,7 @@
 # Repository with all Django homeworks
 
 ---
+![Main workflow](https://github.com/hillel-i-python-pro-i-2022-05-19/homework__zavalii__bohdan__django_project/actions/workflows/main-workflow.yml/badge.svg)
 
 ## 🏠 Homework #14
 
