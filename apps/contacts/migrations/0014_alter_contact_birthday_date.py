@@ -5,15 +5,18 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('contacts', '0013_contact_tags_by_foreign_key_alter_contact_tags'),
+        ("contacts", "0013_contact_tags_by_foreign_key_alter_contact_tags"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='contact',
-            name='birthday_date',
-            field=models.DateField(blank=True, default='2022-07-07',
-                                   help_text='Please enter data in the following format %Y-%m-%d',
-                                   verbose_name='Date of birth'),
+            model_name="contact",
+            name="birthday_date",
+            field=models.DateField(
+                blank=True,
+                default="2022-07-07",
+                help_text="Please enter data in the following format %Y-%m-%d",
+                verbose_name="Date of birth",
+            ),
         ),
     ]

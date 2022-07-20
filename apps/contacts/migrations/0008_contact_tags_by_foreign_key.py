@@ -6,15 +6,15 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('contacts', '0007_alter_contact_birthday_date'),
+        ("contacts", "0007_alter_contact_birthday_date"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='contact',
-            name='tags_by_foreign_key',
-            field=models.ForeignKey(blank=True, null=True,
-                                    on_delete=django.db.models.deletion.SET_NULL,
-                                    to='contacts.tags'),
+            model_name="contact",
+            name="tags_by_foreign_key",
+            field=models.ForeignKey(
+                blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to="contacts.tags"
+            ),
         ),
     ]

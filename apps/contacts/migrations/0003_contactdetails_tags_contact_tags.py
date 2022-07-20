@@ -5,41 +5,38 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('contacts',
-         '0002_contactdetailsoptions_alter_contact_contact_name_and_more'),
+        ("contacts", "0002_contactdetailsoptions_alter_contact_contact_name_and_more"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ContactDetails',
+            name="ContactDetails",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True,
-                                           serialize=False,
-                                           verbose_name='ID')),
-                ('name', models.CharField(default='Vasya',
-                                          help_text='It is the name of the person',
-                                          max_length=200,
-                                          verbose_name='Name')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                (
+                    "name",
+                    models.CharField(
+                        default="Vasya", help_text="It is the name of the person", max_length=200, verbose_name="Name"
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Tags',
+            name="Tags",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True,
-                                           serialize=False,
-                                           verbose_name='ID')),
-                ('tag_name',
-                 models.CharField(help_text="Contact's tags", max_length=50,
-                                  verbose_name='Tags')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("tag_name", models.CharField(help_text="Contact's tags", max_length=50, verbose_name="Tags")),
             ],
         ),
         migrations.AddField(
-            model_name='contact',
-            name='tags',
+            model_name="contact",
+            name="tags",
             field=models.CharField(
-                choices=[('family', 'Family'), ('#friends', 'Friends'),
-                         ('#trip_to_planet_c-137', 'Trip')], default='family',
-                help_text="Contact's personalized tags", max_length=50,
-                verbose_name='Tags'),
+                choices=[("family", "Family"), ("#friends", "Friends"), ("#trip_to_planet_c-137", "Trip")],
+                default="family",
+                help_text="Contact's personalized tags",
+                max_length=50,
+                verbose_name="Tags",
+            ),
         ),
     ]
