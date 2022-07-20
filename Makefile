@@ -73,6 +73,14 @@ init-configs-i-dev:
 	@cp .env.example .env
 
 
+.PHONY: init-dev
+# Generates random 64 length string
+init-dev:
+	@pip install --upgrade pip && \
+	pip install --requirement requirements.txt && \
+	pre-commit install
+
+
 .PHONY: init-dev-create-superuser
 # Create superuser/admin to work with admin panel
 init-dev-create-superuser:
