@@ -16,19 +16,17 @@ PASSWORD_CHARACTERS: Final[str] = "".join(
 
 
 def generate_password(password_length: int = 64) -> str:
-    password_as_list = [
-        random.choice(PASSWORD_CHARACTERS) for _ in range(password_length)
-    ]
+    password_as_list = [random.choice(PASSWORD_CHARACTERS) for _ in range(password_length)]  # noqa: B311
     random.shuffle(password_as_list)
     return "".join(password_as_list)
 
 
 class Command(BaseCommand):
-    HELP_TEXT: ClassVar[str] = 'Generates random 64 length string'
+    HELP_TEXT: ClassVar[str] = "Generates random 64 length string"
 
     def add_arguments(self, parser: CommandParser):
-        parser.add_argument('length', type=int)
+        parser.add_argument("length", type=int)
 
     def handle(self, *args, **options):
-        password_length: int = options['length']
+        password_length: int = options["length"]
         print(generate_password(password_length=password_length))
