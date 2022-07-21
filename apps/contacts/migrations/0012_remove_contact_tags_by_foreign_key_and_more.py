@@ -6,21 +6,22 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     dependencies = [
-        (
-        'contacts', '0011_alter_contactdetailsoptions_email_address_and_more'),
+        ("contacts", "0011_alter_contactdetailsoptions_email_address_and_more"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='contact',
-            name='tags_by_foreign_key',
+            model_name="contact",
+            name="tags_by_foreign_key",
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='tags',
-            field=models.ForeignKey(null=True,
-                                    on_delete=django.db.models.deletion.SET_NULL,
-                                    related_name='contact_tags_related_by_foreign_key',
-                                    to='contacts.tags'),
+            model_name="contact",
+            name="tags",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="contact_tags_related_by_foreign_key",
+                to="contacts.tags",
+            ),
         ),
     ]

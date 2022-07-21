@@ -19,10 +19,9 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('user-generator/', include('apps.user_generator.urls')),
-    path('contacts/', include('apps.contacts.urls')),
-    path('', include('apps.base.urls')),
-    path('favicon.ico',
-         RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico')))
+    path("admin/", admin.site.urls),
+    path("user-generator/", include("apps.user_generator.urls")),
+    path("contacts/", include("apps.contacts.urls")),
+    path("", include("apps.base.urls")),
+    path("favicon.ico", RedirectView.as_view(url=staticfiles_storage.url("img/favicon.ico"))),
 ]

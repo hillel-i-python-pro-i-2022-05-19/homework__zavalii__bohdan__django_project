@@ -73,10 +73,24 @@ init-configs-i-dev:
 	@cp .env.example .env
 
 
+.PHONY: init-dev
+# Updates pip and requirements, creates git-hub web-hooks
+init-dev:
+	@pip install --upgrade pip && \
+	pip install --requirement requirements.txt && \
+	pre-commit install
+
+
 .PHONY: init-dev-create-superuser
 # Create superuser/admin to work with admin panel
 init-dev-create-superuser:
 	@DJANGO_SUPERUSER_PASSWORD=admin123 python manage.py createsuperuser --user admin --email admin@gmail.com --no-input
+
+
+.PHONY: pre-commit-run-all
+# Run on all the files in the repo
+pre-commit-run-all:
+	@pre-commit run --all-files
 
 
 .PHONY: util-i-kill-by-port

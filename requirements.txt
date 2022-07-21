@@ -2,6 +2,18 @@
 django==4.0.5
 faker==13.14.0
 
+# IDE code formatter
+black==22.6.0
+
+# GitHub
+pre-commit==2.20.0
+
+# Upgrade syntax
+pyupgrade==2.37.2
+
+# Static analysis
+prospector[with_everything]==1.7.7
+
 # Get environment variables
 django-environ==0.9.0
 

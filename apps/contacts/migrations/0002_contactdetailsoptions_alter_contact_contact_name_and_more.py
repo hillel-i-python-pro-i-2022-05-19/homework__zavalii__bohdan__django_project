@@ -8,55 +8,70 @@ import apps.contacts.utils
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('contacts', '0001_initial'),
+        ("contacts", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ContactDetailsOptions',
+            name="ContactDetailsOptions",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True,
-                                           serialize=False,
-                                           verbose_name='ID')),
-                ('phone_number', models.CharField(blank=True,
-                                                  help_text='The contact person phone number',
-                                                  max_length=17, validators=[
-                        apps.contacts.utils.phone_regex],
-                                                  verbose_name='Phone number')),
-                ('email_address', models.CharField(default='example@gmail.com',
-                                                   help_text='It is the email address of the person',
-                                                   max_length=200,
-                                                   verbose_name='Email')),
-                ('telegram_nickname',
-                 models.CharField(help_text="Here is contact's telegram",
-                                  max_length=100, verbose_name='Telegram')),
-                ('linkedin_profile', models.CharField(
-                    help_text="Here is the link to contact's LinkedIn profile",
-                    max_length=500, verbose_name='LinkedIn')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                (
+                    "phone_number",
+                    models.CharField(
+                        blank=True,
+                        help_text="The contact person phone number",
+                        max_length=17,
+                        validators=[apps.contacts.utils.phone_regex],
+                        verbose_name="Phone number",
+                    ),
+                ),
+                (
+                    "email_address",
+                    models.CharField(
+                        default="example@gmail.com",
+                        help_text="It is the email address of the person",
+                        max_length=200,
+                        verbose_name="Email",
+                    ),
+                ),
+                (
+                    "telegram_nickname",
+                    models.CharField(help_text="Here is contact's telegram", max_length=100, verbose_name="Telegram"),
+                ),
+                (
+                    "linkedin_profile",
+                    models.CharField(
+                        help_text="Here is the link to contact's LinkedIn profile",
+                        max_length=500,
+                        verbose_name="LinkedIn",
+                    ),
+                ),
             ],
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='contact_name',
-            field=models.CharField(default='Vasya',
-                                   help_text='It is the name of the person',
-                                   max_length=200,
-                                   verbose_name='Contact name'),
+            model_name="contact",
+            name="contact_name",
+            field=models.CharField(
+                default="Vasya", help_text="It is the name of the person", max_length=200, verbose_name="Contact name"
+            ),
         ),
         migrations.AlterField(
-            model_name='contact',
-            name='phone_value',
-            field=models.CharField(blank=True,
-                                   help_text='The contact person phone number',
-                                   max_length=17, validators=[
-                    apps.contacts.utils.phone_regex],
-                                   verbose_name='Phone number'),
+            model_name="contact",
+            name="phone_value",
+            field=models.CharField(
+                blank=True,
+                help_text="The contact person phone number",
+                max_length=17,
+                validators=[apps.contacts.utils.phone_regex],
+                verbose_name="Phone number",
+            ),
         ),
         migrations.AddField(
-            model_name='contact',
-            name='contact_details_by_foreign_key',
-            field=models.ForeignKey(blank=True, null=True,
-                                    on_delete=django.db.models.deletion.SET_NULL,
-                                    to='contacts.contactdetailsoptions'),
+            model_name="contact",
+            name="contact_details_by_foreign_key",
+            field=models.ForeignKey(
+                blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to="contacts.contactdetailsoptions"
+            ),
         ),
     ]

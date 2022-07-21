@@ -5,18 +5,18 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('contacts', '0003_contactdetails_tags_contact_tags'),
+        ("contacts", "0003_contactdetails_tags_contact_tags"),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name='ContactDetails',
+            name="ContactDetails",
         ),
         migrations.RemoveField(
-            model_name='contact',
-            name='contact_details_by_foreign_key',
+            model_name="contact",
+            name="contact_details_by_foreign_key",
         ),
         migrations.DeleteModel(
-            name='ContactDetailsOptions',
+            name="ContactDetailsOptions",
         ),
     ]

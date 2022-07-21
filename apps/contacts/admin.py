@@ -5,16 +5,11 @@ from apps.contacts.models import Contact, Tags, ContactDetailsOptions
 
 
 class ContactsAdmin(admin.ModelAdmin):
-    list_display = (
-        'contact_name', 'phone_value', 'tags',
-        'tags_by_foreign_key', 'birthday_date'
-    )
+    list_display = ("contact_name", "phone_value", "tags", "tags_by_foreign_key", "birthday_date")
 
 
 class ContactDetailsAdmin(admin.ModelAdmin):
-    list_display = (
-        'email_address', 'telegram_nickname', 'contact_linkedin_profile'
-    )
+    list_display = ("email_address", "telegram_nickname", "contact_linkedin_profile")
 
     def contact_linkedin_profile(self, obj) -> format_html:
         return format_html(
