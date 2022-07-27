@@ -23,5 +23,8 @@ urlpatterns = [
     path("user-generator/", include("apps.user_generator.urls")),
     path("contacts/", include("apps.contacts.urls")),
     path("", include("apps.base.urls")),
+    path("session/", include("apps.app_sessions.urls")),
+    path("users/", include("apps.users.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
     path("favicon.ico", RedirectView.as_view(url=staticfiles_storage.url("img/favicon.ico"))),
 ]

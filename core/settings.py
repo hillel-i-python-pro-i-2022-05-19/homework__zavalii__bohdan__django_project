@@ -44,7 +44,13 @@ DJANGO_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
-LOCAL_APPS = ["apps.user_generator", "apps.contacts", "apps.base"]
+LOCAL_APPS = [
+    "apps.user_generator",
+    "apps.contacts",
+    "apps.base",
+    "apps.app_sessions",
+    "apps.users",
+]
 
 THIRD_PARTY_APPS = []
 
@@ -61,6 +67,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "core.urls"
+
+AUTH_USER_MODEL = "users.User"
+
+LOGIN_REDIRECT_URL = "index"
+LOGOUT_REDIRECT_URL = LOGIN_REDIRECT_URL
 
 TEMPLATES = [
     {
