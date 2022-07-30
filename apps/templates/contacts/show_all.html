@@ -11,7 +11,7 @@
                 <span>{{ contact.contact_name }} - (+{{ contact.phone_value }}) - {{ contact.birthday_date }}</span>
 
                 <a href="{% url 'contacts:edit' pk=contact.pk %}">
-                    <button class="btn btn-outline-secondary">Edit</button>
+                    <button class="btn btn-outline-secondary" style="color: burlywood;">Edit</button>
                 </a>
                 <a href="{% url 'contacts:delete' pk=contact.pk %}">
                     <button class="btn btn-outline-danger">Delete</button>
