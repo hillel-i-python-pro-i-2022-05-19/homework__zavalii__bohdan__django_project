@@ -1,9 +1,17 @@
-<h2>Delete Contact - {{ object.contact_name }}</h2>
+{% extends '_helpers/_base.html' %}
 
-<p>Are you sure you want to delete this
-    contact?</p>
+{% block body %}
+    <div id="deleteConfirm">
+        <h2>Delete Contact - <i><u>{{ object.contact_name }}</u></i></h2>
 
-<form action="" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Delete">
-</form>
+        <p class="del-conf-text">Are you sure you want to delete this
+            contact?</p>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-danger" value="Delete">
+        </form>
+    </div>
+{% endblock %}
+
+
