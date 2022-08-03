@@ -214,5 +214,6 @@ docker-compose.override.yml
 db/**
 !db/.gitkeep
 
-# Custom files
-settings.py
+# For media files
+media/**
+!media/.gitkeep
