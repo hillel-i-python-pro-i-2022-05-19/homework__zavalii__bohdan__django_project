@@ -1,6 +1,11 @@
 # Core
 django==4.0.5
 faker==13.14.0
+Pillow==9.2.0
+
+# Crispy forms
+django-crispy-forms==1.14.0
+crispy-bootstrap5==0.6
 
 # IDE code formatter
 black==22.6.0
