@@ -2,8 +2,11 @@ from django.contrib.auth.decorators import login_required
 from django.urls import path, include
 
 from apps.contacts import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 app_name = "contacts"
+
 
 urlpatterns = [
     path("", login_required(views.ShowAllContactsView.as_view()), name="show_all"),
@@ -18,3 +21,5 @@ urlpatterns = [
         ),
     ),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
