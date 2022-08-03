@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,8 +22,9 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="{% static "styles/index.css" %}" rel="stylesheet">
 </head>
-<body style="background-image: url(/static/img/rick_and_morty_wp.jpg); background-size: cover; color: aliceblue;">
+<body id="bg" style="background-image: url('{% static "img/rick_and_morty_wp.jpg" %}')">
 {% include '_helpers/_header.html' %}
 {% include '_helpers/_messages.html' %}
 <div class="container-fluid">
