@@ -1,0 +1,43 @@
+#bg{
+    background-size: cover;
+    color: gainsboro;
+}
+
+.greetings-text {
+    text-shadow: 0 1px 1px darkgreen;
+    text-align: center;
+    font-size: x-large;
+    color: darkgreen;
+}
+
+/* Header */
+#navbarSupportedContent{
+    padding: .2em;
+}
+#userGreetingDiv{
+    float: right;
+}
+#userGreeting{
+    padding: 1em;
+    color: aliceblue;
+}
+
+/* Contacts app */
+.contact-avatar {
+    max-width: 5em;
+}
+
+/* Delete confirmation template */
+#deleteConfirm{
+    padding-left: 1em;
+
+}
+.del-conf-text{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.1em;
+}
+
+#editButton{
+    /*color: yellowgreen;*/
+}

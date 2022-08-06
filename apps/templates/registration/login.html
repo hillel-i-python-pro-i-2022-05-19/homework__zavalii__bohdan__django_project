@@ -1,0 +1,14 @@
+{% extends '_helpers/_base.html' %}
+
+
+{% block body %}
+    {% block content %}
+        <h2>Log-in</h2>
+        <p>Please, use the following form to log-in:</p>
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <p><input type="submit" class="btn btn-primary" style="border-color: darkgrey;" value="Log-in"></p>
+        </form>
+    {% endblock %}
+{% endblock %}

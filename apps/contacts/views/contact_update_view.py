@@ -6,5 +6,5 @@ from apps.contacts.models import Contact
 
 class ContactUpdateView(UpdateView):
     model = Contact
-    fields = ["contact_name", "phone_value"]
+    fields = ["contact_name", "phone_value", "birthday_date", "avatar"]
     success_url = reverse_lazy("contacts:show_all")

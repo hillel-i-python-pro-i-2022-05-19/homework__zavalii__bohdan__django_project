@@ -1,4 +1,4 @@
-{% extends '_base.html' %}
+{% extends '_helpers/_base.html' %}
 
 {% block body %}
     <a href="{% url 'contacts:create' %}">
@@ -8,10 +8,14 @@
     <ol>
         {% for contact in contacts %}
             <li style="margin: .2em;">
-                <span>{{ contact.contact_name }} - (+{{ contact.phone_value }}) - {{ contact.birthday_date }}</span>
+                {% if contact.avatar %}
+                    <img class="contact-avatar" src="{{ contact.avatar.url }}" alt="{{ contact.contact_name }}">
+
+                {% endif %}
+                <span>{{ contact.contact_name }} - (+{{ contact.phone_value }}) - {{ contact.birthday_date }} | </span>
 
                 <a href="{% url 'contacts:edit' pk=contact.pk %}">
-                    <button class="btn btn-outline-secondary">Edit</button>
+                    <button class="btn btn-outline-secondary" id="editButton">Edit</button>
                 </a>
                 <a href="{% url 'contacts:delete' pk=contact.pk %}">
                     <button class="btn btn-outline-danger">Delete</button>
