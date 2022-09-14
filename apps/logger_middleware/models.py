@@ -24,6 +24,6 @@ class RequestLogger(models.Model):
     latest_entry = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
-        return f"{self.username} - {self.log_path} - {self.latest_entry}"
+        return f"{self.pk} ~ {self.username} ~ {self.log_path} ~ {self.latest_entry}"
 
     __repr__ = __str__
