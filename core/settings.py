@@ -50,6 +50,7 @@ LOCAL_APPS = [
     "apps.base",
     "apps.app_sessions",
     "apps.users",
+    "apps.logger_middleware",
 ]
 
 THIRD_PARTY_APPS = ["crispy_forms", "crispy_bootstrap5"]
@@ -64,6 +65,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    "apps.logger_middleware.middleware.LoggingMiddleware",
 ]
 
 ROOT_URLCONF = "core.urls"
