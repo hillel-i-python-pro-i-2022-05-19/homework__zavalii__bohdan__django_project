@@ -1,0 +1,27 @@
+{% extends '_helpers/_base.html' %}
+
+{% block body %}
+    <h3><i>All requests logger</i></h3>
+    <table class="table_logger_body">
+        <thead class="table_head_logger">
+        <tr id="table_row_logger">
+{#            <th id="table_head_data_logger">#</th>#}
+            <th id="table_head_data_logger">Username</th>
+            <th id="table_head_data_logger">HTTP Method</th>
+            <th id="table_head_data_logger">Member's latest entry</th>
+            <th id="table_head_data_logger">Member's last location</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for middleware_log in middleware_logs %}
+            <tr id="table_row_logger">
+{#                <td id="table_data_logger">{{ middleware_log.pk }}</td>#}
+                <td id="table_data_logger">{{ middleware_log.username }}</td>
+                <td id="table_data_logger">{{ middleware_log.method }}</td>
+                <td id="table_data_logger">{{ middleware_log.latest_entry }}</td>
+                <td id="table_data_logger">~ {{ middleware_log.log_path }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

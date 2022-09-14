@@ -38,6 +38,36 @@
     font-size: 1.1em;
 }
 
-#editButton{
-    /*color: yellowgreen;*/
+/* Editing style of the logger middleware table */
+.table_logger_body{
+    width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
+    font-size: 1.2em;
 }
+.table_head_logger{
+    font-size: 1.3em;
+    background-color: saddlebrown;
+}
+#table_row_logger{
+    border: 1px solid;
+    color: white;
+}
+#table_head_data_logger{
+    text-align: center;
+    border: 1px solid;
+}
+#table_data_logger{
+    border: 1px solid;
+    padding: 5px;
+}
+table {
+  counter-reset: rowNumber;
+}
+#table_row_logger::before {
+  display: table-cell;
+  counter-increment: rowNumber;
+  content: counter(rowNumber) ".";
+  text-align: center;
+}
+/* End of editing style of the logger middleware table */
